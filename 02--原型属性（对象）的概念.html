@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型属性（对象）的概念</title>
+	<script>
+		// 原型属性：对于构造函数来说，原型就是构造函数的prototype属性，
+		// 		因此就可以将原型称之为 构造函数 的 原型属性。
+		// 原型对象：对于每一对象来说，由于所有对象都有原型，
+		// 		因此将其原型称为该对象的原型对象
+		//  在js中，每一个对象都由 两部分组成： 1. 对象本身 和 2. 它的原型
+		function foo() {
+			// body...
+		}
+		function foo1() {
+			// body...
+		}	
+		foo.prototype = {
+			constructor: foo1
+		};
+		var o = new foo;
+		// console.log(o.age);
+		console.log(o instanceof foo1);
+		// o -> foo.prototype -> Object.prototype -> null;
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

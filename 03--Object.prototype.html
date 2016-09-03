@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object.prototype</title>
+	<script>
+		function foo() {
+			this.name = 'hanmeimei'
+		}
+		// var f = new foo;
+		// f 的 原型对象 是 foo.prototype
+		// foo.prototype 的 原型对象 就是 Object.prototype
+		// Object.prototype 的 原型对象 是 null
+		// 老子：万物生于无而归于无。
+		// f -> foo.prototype -> Object.prototype -> null
+		// console.log(foo.prototype.__proto__ == Object.prototype);
+		// console.log(Object.prototype.__proto__);
+		// var arr = new Array();
+		// arr -> Array.prototype -> Object.prototype -> null
+		// 每一个对象都有原型对象，而它的原型对象的原型对象 默认 是 Object.prototype
+		// 那么，每一个对象，都直接或间接的继承自Object.prototype
+		// var o = {};
+		// 直接继承Object.prototype
+		// o -> Object.prototype -> null
+		// 
+		function foo1() {
+			this.name = 'lilei';
+		}
+		foo.prototype = new foo1();
+		var f = new foo;
+		// f -> foo.prototype -> foo1.prototype -> Object.prototype -> null
+		console.log(f.name);
+		console.log(f.age);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
